@@ -1,5 +1,6 @@
 import React from 'react';
 import GlobalStyle from './theme/GlobalStyle'
+import Navigation from './components/Navigation/NavWrapper'
 
 import './App.css';
 
@@ -8,7 +9,7 @@ function App() {
     <React.Fragment>
       <GlobalStyle />
       <div className="App">
-        
+        <Navigation />
       </div>
     </React.Fragment>
   );
