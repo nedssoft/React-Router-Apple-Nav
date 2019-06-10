@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faShoppingBag, faSearch } from '@fortawesome/free-solid-svg-icons'
 import NavItem from './Nav'
-
+library.add(fab, faShoppingBag, faSearch)
 const NavWrapper = styled.nav`
   width: 100%;
   height: 44px;
@@ -24,12 +28,11 @@ const NavWrapper = styled.nav`
     color: white;
   }
 `
-
 export default function navigation() {
   return (
     <NavWrapper>
         <ul>
-          <NavItem link="/home">Home</NavItem>
+          <NavItem link="/"><FontAwesomeIcon icon={['fab', 'apple']} /></NavItem>
           <NavItem link="/mac">Mac</NavItem>
           <NavItem link="/ipad">iPad</NavItem>
           <NavItem link="/iphone">iPhone</NavItem>
@@ -37,8 +40,8 @@ export default function navigation() {
           <NavItem link="/tv">TV</NavItem>
           <NavItem link="/music">Music</NavItem>
           <NavItem link="/support">Support</NavItem>
-          <NavItem link="/search">Search</NavItem>
-          <NavItem link="/bag">Bag</NavItem>
+          <NavItem link="/search"><FontAwesomeIcon icon="search" /></NavItem>
+          <NavItem link="/bag"><FontAwesomeIcon icon="shopping-bag" /></NavItem>
         </ul>
 
     </NavWrapper>
