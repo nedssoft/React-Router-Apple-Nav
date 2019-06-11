@@ -20,7 +20,7 @@ const NavItemWrapper = styled.li`
 export default function navItem({ link, children }) {
   return (
     <NavItemWrapper>
-      <NavLink to={link}>
+      <NavLink exact to={link}>
         { children }
       </NavLink>
     </NavItemWrapper>

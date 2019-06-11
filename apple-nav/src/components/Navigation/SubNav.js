@@ -21,16 +21,28 @@ class SubNav extends React.Component {
     navData: data,
     subLinks: []
   }
-
-  UNSAFE_componentWillReceiveProps (nextProps) {
-    const nav = this.state.navData.find(data => data.name.toLowerCase() === nextProps.match.params.name )
-    const subLinks = nav ? nav.subLinks : []
-      this.setState(prevState => ({
+  componentDidMount() {
+    const { name } = this.props.match.params;
+    this.setState(prevState => ({
       ...prevState,
-      subLinks: subLinks
+      subLinks: this.getCurrentSubLinks(name)
     }))
   }
+  componentWillReceiveProps(nextProps) {
+    const { name } = nextProps.match.params;
+    if (this.props.match.params.name !== name ) {
+      this.setState(prevState => ({
+        ...prevState,
+        subLinks: this.getCurrentSubLinks(name)
+      }))
+    }
+   
+  }
+  getCurrentSubLinks = (name) => {
+    const item = this.state.navData.find(data => data.name.toLowerCase() === name )
+    return item ? item.subLinks : []
 
+  }
   render() {
     return (
       <SubNavWrapper>
