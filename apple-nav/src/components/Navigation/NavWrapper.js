@@ -21,7 +21,6 @@ const NavWrapper = styled.nav`
       display: flex;
       justify-content: space-between;
       align-items: center;
-    
     }
   * {
     font-size: 1rem;

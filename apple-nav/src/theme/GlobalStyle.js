@@ -142,6 +142,7 @@ html {
 body {
   height: 100%;
   width: 100vw;
+  margin-top: 44px;
 }
 button, input {
   outline: none;
